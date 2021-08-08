@@ -77,6 +77,15 @@
       (smudge-track-recently-played-tracks-update 1))))
 
 ;;;###autoload
+(defun smudge-saved-tracks ()
+  "Display saved tracks."
+  (interactive)
+  (let ((buffer (get-buffer-create "'Saved Tracks'")))
+    (with-current-buffer buffer
+      (smudge-track-search-mode)
+      (smudge-track-saved-tracks-update 1))))
+
+;;;###autoload
 (defun smudge-my-playlists ()
   "Display the current user's playlists."
   (interactive)
